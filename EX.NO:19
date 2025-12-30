@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Load the World Alcohol Consumption dataset
+# (Assuming CSV file is available locally as 'world_alcohol.csv')
+df = pd.read_csv("world_alcohol.csv")
+
+# Display the dimensions (shape) of the dataset
+print("Shape of the dataset:", df.shape)
+
+# Extract column names
+print("Column names:", df.columns.tolist())
