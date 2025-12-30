@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with random values (including negatives)
+np.random.seed(1)
+df = pd.DataFrame(
+    np.random.randint(-50, 50, size=(10, 4)),
+    columns=["A", "B", "C", "D"]
+)
+
+# Function to apply color
+def highlight_numbers(val):
+    if val < 0:
+        return "color: red"
+    else:
+        return "color: black"
+
+# Apply styling
+styled_df = df.style.applymap(highlight_numbers)
+
+styled_df
