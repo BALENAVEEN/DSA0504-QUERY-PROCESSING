@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.arange(1, 6)
+y1 = x ** 2
+y2 = x ** 3
+y3 = np.sqrt(x)
+y4 = np.log(x)
+
+# Create multiple subplots (2x2 layout)
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+# Plot 1
+axs[0, 0].plot(x, y1, color='red', marker='o')
+axs[0, 0].set_title("y = x^2")
+
+# Plot 2
+axs[0, 1].plot(x, y2, color='blue', marker='s')
+axs[0, 1].set_title("y = x^3")
+
+# Plot 3
+axs[1, 0].plot(x, y3, color='green', marker='^')
+axs[1, 0].set_title("y = sqrt(x)")
+
+# Plot 4
+axs[1, 1].plot(x, y4, color='purple', marker='*')
+axs[1, 1].set_title("y = log(x)")
+
+# Set common labels
+for ax in axs.flat:
+    ax.set_xlabel("X Axis")
+    ax.set_ylabel("Y Axis")
+    ax.grid(True)
+
+# Adjust layout
+plt.tight_layout()
+plt.show()
