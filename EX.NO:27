@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+languages = ["Java", "Python", "PHP", "JavaScript", "C++"]
+popularity = [22, 35, 15, 30, 18]  # Sample popularity values
+
+# Create bar chart
+plt.figure(figsize=(8,5))
+plt.bar(languages, popularity, color=['red', 'blue', 'green', 'orange', 'purple'])
+
+# Add labels and title
+plt.xlabel("Programming Languages")
+plt.ylabel("Popularity (%)")
+plt.title("Popularity of Programming Languages")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Show the plot
+plt.show()
