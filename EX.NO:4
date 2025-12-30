@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample historical stock price data for Alphabet Inc. (GOOGL)
+data = {
+    "Date": pd.date_range(start="2023-01-01", end="2023-01-10"),
+    "Close_Price": [88, 90, 92, 91, 94, 96, 95, 97, 99, 100]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Convert Date column to datetime
+df["Date"] = pd.to_datetime(df["Date"])
+
+# Select data between two specific dates
+start_date = "2023-01-03"
+end_date = "2023-01-09"
+filtered_df = df[(df["Date"] >= start_date) & (df["Date"] <= end_date)]
+
+# Create line plot
+plt.figure()
+plt.plot(filtered_df["Date"], filtered_df["Close_Price"])
+plt.xlabel("Date")
+plt.ylabel("Closing Price")
+plt.title("Alphabet Inc. Stock Prices")
+plt.show()
