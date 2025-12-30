@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y1 = [10, 20, 15, 25, 30]
+y2 = [5, 15, 10, 20, 25]
+y3 = [2, 10, 5, 15, 20]
+
+# Plot multiple lines with different colors and widths
+plt.plot(x, y1, color='red', linewidth=2, label='Line 1')
+plt.plot(x, y2, color='blue', linewidth=3, label='Line 2')
+plt.plot(x, y3, color='green', linewidth=1, label='Line 3')
+
+# Add labels, title, and legend
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
+plt.title("Multiple Lines with Legends, Widths, and Colors")
+plt.legend()
+plt.grid(True)
+
+# Show the plot
+plt.show()
