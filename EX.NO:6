@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample Alphabet Inc. (GOOGL) stock data
+alphabet_stock_data = {
+    "Date": pd.date_range(start="2023-01-01", end="2023-01-10"),
+    "Close_Price": [88, 90, 92, 91, 94, 96, 95, 97, 99, 100],
+    "Volume": [1200000, 1350000, 1500000, 1450000, 1600000,
+               1700000, 1650000, 1800000, 1900000, 2000000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(alphabet_stock_data)
+
+# Convert Date column to datetime
+df["Date"] = pd.to_datetime(df["Date"])
+
+# Select data between two specific dates
+start_date = "2023-01-03"
+end_date = "2023-01-09"
+filtered_df = df[(df["Date"] >= start_date) & (df["Date"] <= end_date)]
+
+# Create scatter plot (Volume vs Stock Price)
+plt.figure()
+plt.scatter(filtered_df["Volume"], filtered_df["Close_Price"])
+plt.xlabel("Trading Volume")
+plt.ylabel("Stock Price")
+plt.title("Alphabet Inc. Stock Price vs Trading Volume")
+plt.show()
