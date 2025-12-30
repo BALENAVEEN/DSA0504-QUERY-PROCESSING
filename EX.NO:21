@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    "Name": ["Alice", "bob", "CHARLIE", "David", "eVa"],
+    "Age": [25, 30, 35, 40, 28]
+}
+
+df = pd.DataFrame(data)
+
+# Swap the case of 'Name' column
+df["Name"] = df["Name"].str.swapcase()
+
+print(df)
