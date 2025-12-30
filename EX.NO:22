@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 25, 30]
+
+# Draw line plot
+plt.plot(x, y, marker='o', color='b', linestyle='-')
+
+# Add labels and title
+plt.xlabel("X Axis Label")
+plt.ylabel("Y Axis Label")
+plt.title("Sample Line Plot")
+
+# Show the plot
+plt.show()
