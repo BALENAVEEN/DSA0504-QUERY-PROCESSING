@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    "Country": ["United States", "India", "United Kingdom", "Germany", "Australia"],
+    "Capital": ["Washington", "New Delhi", "London", "Berlin", "Canberra"]
+}
+
+df = pd.DataFrame(data)
+
+# Find index of rows where 'United' is a substring in 'Country' column
+substring = "United"
+matching_indices = df[df["Country"].str.contains(substring)].index.tolist()
+
+print("Indices with substring '{}':".format(substring), matching_indices)
