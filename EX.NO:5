@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample trading volume data for Alphabet Inc. (GOOGL)
+data = {
+    "Date": pd.date_range(start="2023-01-01", end="2023-01-10"),
+    "Volume": [1200000, 1350000, 1500000, 1450000, 1600000,
+               1700000, 1650000, 1800000, 1900000, 2000000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Convert Date column to datetime
+df["Date"] = pd.to_datetime(df["Date"])
+
+# Select data between two specific dates
+start_date = "2023-01-03"
+end_date = "2023-01-09"
+filtered_df = df[(df["Date"] >= start_date) & (df["Date"] <= end_date)]
+
+# Create bar plot
+plt.figure()
+plt.bar(filtered_df["Date"], filtered_df["Volume"])
+plt.xlabel("Date")
+plt.ylabel("Trading Volume")
+plt.title("Alphabet Inc. Trading Volume")
+plt.show()
