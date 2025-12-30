@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Sample sales_data table
+sales_data = {
+    "Item": ["Laptop", "Laptop", "Mobile", "Mobile", "Tablet", "Tablet"],
+    "Sale_Value": [50000, 52000, 20000, 22000, 15000, 14000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(sales_data)
+
+# Create Pivot Table to find max and min sale value of items
+pivot_table = pd.pivot_table(
+    df,
+    index="Item",
+    values="Sale_Value",
+    aggfunc=["max", "min"]
+)
+
+print(pivot_table)
